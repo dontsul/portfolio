@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useLayoutEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { FiSun, FiMoon } from 'react-icons/fi';
 
@@ -8,14 +8,16 @@ export const Toggle = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const router = useRouter();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const theme = localStorage.getItem('theme');
     if (theme === 'dark') {
       setIsDarkMode(true);
       document.documentElement.classList.add('dark');
+      document.documentElement.classList.add('dark-theme');
     } else {
       setIsDarkMode(false);
       document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove('dark-theme');
     }
   }, []);
 
@@ -25,7 +27,6 @@ export const Toggle = () => {
     localStorage.setItem('theme', newTheme);
     document.documentElement.classList.toggle('dark');
 
-    // Добавьте этот код для применения класса стиля для темы
     if (newTheme === 'dark') {
       document.documentElement.classList.add('dark-theme');
     } else {
