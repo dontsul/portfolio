@@ -30,38 +30,27 @@ export const Header = () => {
 
   const navList = (
     <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      {navLinks.map((link) => {
+      {navLinks.map((link, index) => {
         const isActive = link.href === pathname;
         return (
-          <>
-            <Typography
-              key={link.label}
-              as="li"
-              variant="small"
-              color="blue-gray"
-              className="p-1 font-normal"
+          <Typography
+            key={link.label}
+            as="li"
+            variant="small"
+            color="blue-gray"
+            className="p-1 font-normal"
+          >
+            <Link
+              className={`text-base antialiased font-medium  ${
+                isActive ? 'text-blue-500' : 'text-blue-gray-900'
+              }`}
+              href={link.href}
             >
-              <Link
-                className={`text-base antialiased font-medium  ${
-                  isActive ? 'text-blue-500' : 'text-blue-gray-900'
-                }`}
-                href={link.href}
-              >
-                {link.label}
-              </Link>
-            </Typography>
-          </>
+              {link.label}
+            </Link>
+          </Typography>
         );
       })}
-      {/* className={isActive ? 'text-blue' : 'text-black'}
-           
-            key={link.name} */}
-      {/* <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
-        <Link href="/">Home</Link>
-      </Typography>
-      <Typography as="li" variant="small" color="blue-gray" className="p-1 font-normal">
-        <Link href="/projects">Projects</Link>
-      </Typography> */}
     </ul>
   );
 

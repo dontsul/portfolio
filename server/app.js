@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import projectsRoute from './routes/Projects.js';
 import technologiesRoute from './routes/Technologies.js';
+import formDatasRoute from './routes/FormDatas.js';
 import mongoose from 'mongoose';
 
 const app = express();
@@ -14,11 +15,19 @@ const DB_PASSWORD = process.env.DB_PASSWORD;
 const DB_NAME = process.env.DB_NAME;
 
 // Middleware
+app.use(express.json());
+app.use(express.static('images'));
 app.use(cors());
 
 // Router
 app.use('/api/projects', projectsRoute);
 app.use('/api/technologies', technologiesRoute);
+app.use('/api/formdatas', formDatasRoute);
+
+app.get('/images/:imageName', (req, res) => {
+  const { imageName } = req.params;
+  res.sendFile(imageName, { root: '/images' });
+});
 
 async function start() {
   try {

@@ -20,12 +20,23 @@ export const CustomForm = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FormData>({
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data: FormData) => console.log(data);
+  const onSubmit = (data: FormData) => {
+    fetch('http://localhost:3002/api/formdatas', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify(data),
+    })
+      .then(() => reset())
+      .catch((e) => console.log(e));
+  };
 
   const wrapAnimation = {
     hidden: {

@@ -1,18 +1,31 @@
 import Image from 'next/image';
 
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { SingleSlide } from './singleSlide/SingleSlide';
 import { EffectCoverflow, Pagination } from 'swiper';
-import { projects } from './projects';
 import { motion } from 'framer-motion';
+import { ProjectInfo } from '../projectsList/project/Project';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import './styles.css';
 
-export const Carousel = () => {
+async function getProjects() {
+  const response = await fetch('http://localhost:3002/api/projects');
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch data');
+  }
+
+  return response.json();
+}
+
+export const Carousel = async () => {
+  const res = await getProjects();
+  const projects = await res.projects;
+
   const elemntAnimation = {
     hidden: {
       x: -300,
@@ -32,7 +45,7 @@ export const Carousel = () => {
     <motion.div initial="hidden" whileInView="visible" variants={elemntAnimation}>
       <Swiper
         className={`mySwiper w-full pt-[50px] pb-[50px]`}
-        initialSlide={2}
+        initialSlide={3}
         effect={'coverflow'}
         grabCursor={true}
         centeredSlides={true}
@@ -50,13 +63,18 @@ export const Carousel = () => {
         }}
         modules={[EffectCoverflow, Pagination]}
       >
-        {projects.map((project, index) => {
+        {projects.map((project: ProjectInfo, index: number) => {
           return (
             <SwiperSlide
               key={index}
               className="block w-[300px] h-full bg-white dark:bg-blue-gray-800 rounded-md"
             >
-              <SingleSlide image={project.element} title={project.title} index={index} />
+              <SingleSlide
+                project={project}
+                // image={project.element}
+                // title={project.title}
+                // index={index}
+              />
             </SwiperSlide>
           );
         })}

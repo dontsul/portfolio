@@ -1,11 +1,12 @@
 'use client';
 
-import { Skill } from '../skill/Skill';
+import { FC } from 'react';
 import { Spring } from '../spring/Spring';
 import { Typography } from '@material-tailwind/react';
 import { MVerticalTabs } from '../verticalTabs/VerticalTabs';
 import { motion } from 'framer-motion';
-export const Skills = () => {
+
+export const Skills: FC = () => {
   const animation = {
     hidden: {
       y: -100,
@@ -55,28 +56,3 @@ export const Skills = () => {
     </motion.section>
   );
 };
-
-// const skills = [
-//   { title: 'HTML' },
-//   { title: 'CSS / SCSS / SASS' },
-//   { title: 'JavaScript' },
-//   { title: 'TypeScript' },
-//   { title: 'React' },
-//   { title: 'Node.js' },
-//   { title: 'Next.js' },
-//   { title: 'Redux-toolkit' },
-//   { title: 'Express.js' },
-//   { title: 'MongoDB' },
-//   { title: 'Firebase' },
-//   { title: 'Git / Github / Gitlab' },
-//   { title: 'Tailwind CSS' },
-//   { title: 'Bootstrap' },
-//   { title: 'Material UI' },
-//   { title: 'Css module' },
-//   { title: 'Styled components' },
-//   { title: 'REST API' },
-//   { title: 'Figma' },
-//   { title: 'IndexedDB' },
-//   { title: 'Gulp' },
-//   { title: 'BEM Methodology' },
-// ];

@@ -5,7 +5,7 @@ import { ProjectsSlide } from '@/components/projectsSlide/ProjectsSlide';
 import { ContactMe } from '@/components/contactMe/ContactMe';
 import Scroll from '../components/scroll/Scroll';
 
-export default function Home() {
+export default async function Home() {
   return (
     <Scroll>
       <main className="flex min-h-screen flex-col pt-12 md:pt-18 ">

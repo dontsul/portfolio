@@ -45,7 +45,6 @@ export const Square: React.FC<SquareProps> = ({
       className="w-[30px] h-[30px]  sm:w-[40px] sm:h-[40px] md:w-[60px] md:h-[60px] p-0 title:text-red z-50"
       style={{
         backgroundImage: `url('/skillsPng/${image}')`,
-        // backgroundImage: `url('http://localhost:3002/skillsPng/${image}')`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center',

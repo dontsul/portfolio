@@ -1,8 +1,6 @@
-import * as React from 'react';
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { motion, useMotionValue, MotionValue } from 'framer-motion';
 import { Square } from './square/Square';
-
 const images = [
   ['html.png', 'css.png', 'js.png', 'react.png', 'redux.png'],
   ['ts.png', 'nodejs.png', 'mongodb.png', 'express.png', 'git.png'],
@@ -11,22 +9,7 @@ const images = [
   ['gulp.png', 'rest.png', 'figma.png', 'npm.png', 'vscode.png'],
 ];
 
-interface ActiveSquare {
-  row: number;
-  col: number;
-}
-
-interface SquareProps {
-  active: ActiveSquare;
-  setActive: React.Dispatch<React.SetStateAction<ActiveSquare>>;
-  colIndex: number;
-  rowIndex: number;
-  x: MotionValue<number>;
-  y: MotionValue<number>;
-  image: string;
-}
-
-export const Spring: React.FC = () => {
+export const Spring: FC = () => {
   const [active, setActive] = useState({ row: 0, col: 0 });
   const x = useMotionValue(0);
   const y = useMotionValue(0);

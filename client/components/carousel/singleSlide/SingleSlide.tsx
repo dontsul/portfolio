@@ -26,20 +26,16 @@ import {
   BookmarkIcon,
 } from '@heroicons/react/24/outline';
 
-interface SingleSlideProps {
-  title: string;
-  image: StaticImageData;
-  index: number;
-}
+import { ProjectProps } from '@/components/projectsList/project/Project';
 
-export const SingleSlide: FC<SingleSlideProps> = ({ title, image, index }) => {
+export const SingleSlide: FC<ProjectProps> = ({ project }) => {
   return (
     <Card className="w-full max-w-[26rem] bg-white dark:bg-blue-gray-800  h-full rounded-md">
       <CardHeader className="rounded-md" floated={false} color="blue-gray">
         <Image
-          src={image}
-          className="transition rounded-md"
-          alt="Nature 1"
+          className="rounded-md"
+          src={`http://localhost:3002/projects/${project.image}`}
+          alt={project.title}
           width={1000}
           height={1000}
         />
@@ -52,7 +48,7 @@ export const SingleSlide: FC<SingleSlideProps> = ({ title, image, index }) => {
             color="blue-gray"
             className="font-medium dark:text-white text-md"
           >
-            {title}
+            {project.title}
           </Typography>
         </div>
 
@@ -63,16 +59,18 @@ export const SingleSlide: FC<SingleSlideProps> = ({ title, image, index }) => {
         <div className="group inline-flex flex-wrap items-center gap-3 m-0 py-0">
           <Tooltip content="Github">
             <a
-              href="https://github.com/"
+              href={project.links.github}
               className="rounded-full hover:bg-blue-100 dark:hover:bg-blue-gray-500 p-2 transition"
+              target="_blank"
             >
               <BsGithub size={18} color="#2196f3" />
             </a>
           </Tooltip>
           <Tooltip content="Website">
             <a
-              href="https://github.com/"
+              href={project.links.url}
               className="rounded-full hover:bg-blue-100 dark:hover:bg-blue-gray-500 p-2 transition"
+              target="_blank"
             >
               <AiOutlineLink color="#2196f3" size={18} />
             </a>
@@ -80,7 +78,7 @@ export const SingleSlide: FC<SingleSlideProps> = ({ title, image, index }) => {
         </div>
       </CardBody>
       <CardFooter className="p-0 px-6 bt-1 pb-2 mb-2">
-        <Link href={`/projects/${index}`}>
+        <Link href={`/projects/${project._id}`}>
           <Button
             variant="text"
             className="flex items-center gap-2 mt-0 py-2 text-blue-gray-800 dark:text-blue-gray-100 text-xs"
