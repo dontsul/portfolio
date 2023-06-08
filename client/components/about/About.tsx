@@ -61,11 +61,11 @@ export const About = () => {
           development.
         </p>
 
-        <div className="mt-16">
+        {/* <div className="mt-16">
           <Button variant="gradient" className="flex items-center gap-3 mt-8">
             <CloudArrowUpIcon strokeWidth={2} className="h-5 w-5" /> Upload Resume
           </Button>
-        </div>
+        </div> */}
       </motion.div>
     </motion.section>
   );

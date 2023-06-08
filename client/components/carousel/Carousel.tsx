@@ -1,6 +1,6 @@
-import Image from 'next/image';
+'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { SingleSlide } from './singleSlide/SingleSlide';
@@ -12,20 +12,7 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import './styles.css';
 
-async function getProjects() {
-  const response = await fetch('http://localhost:3002/api/projects');
-
-  if (!response.ok) {
-    throw new Error('Failed to fetch data');
-  }
-
-  return response.json();
-}
-
-export const Carousel = async (): Promise<JSX.Element> => {
-  const res = await getProjects();
-  const projects = await res.projects;
-
+export const Carousel = ({ projects }: { projects: ProjectInfo[] }) => {
   const elemntAnimation = {
     hidden: {
       x: -300,
@@ -63,16 +50,17 @@ export const Carousel = async (): Promise<JSX.Element> => {
         }}
         modules={[EffectCoverflow, Pagination]}
       >
-        {projects.map((project: ProjectInfo, index: number) => {
-          return (
-            <SwiperSlide
-              key={index}
-              className="block w-[300px] h-full bg-white dark:bg-blue-gray-800 rounded-md"
-            >
-              <SingleSlide project={project} />
-            </SwiperSlide>
-          );
-        })}
+        {projects &&
+          projects.map((project: ProjectInfo, index: number) => {
+            return (
+              <SwiperSlide
+                key={index}
+                className="block w-[300px] h-full bg-white dark:bg-blue-gray-800 rounded-md"
+              >
+                <SingleSlide project={project} />
+              </SwiperSlide>
+            );
+          })}
       </Swiper>
     </motion.div>
   );

@@ -35,7 +35,7 @@ export const SingleSlide: FC<ProjectProps> = ({ project }) => {
       <CardHeader className="rounded-md" floated={false} color="blue-gray">
         <Image
           className="rounded-md"
-          src={`${URL}/projects/${project.image}`}
+          src={`${URL}images/projects/${project.image}`}
           alt={project.title}
           width={1000}
           height={1000}

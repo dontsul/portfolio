@@ -3,8 +3,9 @@
 import { Carousel } from '../carousel/Carousel';
 import { motion } from 'framer-motion';
 import { Typography } from '@material-tailwind/react';
+import { ProjectInfo } from '../projectsList/project/Project';
 
-export const ProjectsSlide = () => {
+export const ProjectsSlide = ({ projects }: { projects: ProjectInfo[] }) => {
   const textAnimation = {
     hidden: {
       y: -100,
@@ -32,7 +33,7 @@ export const ProjectsSlide = () => {
           My Projects
         </Typography>
       </motion.div>
-      {/* <Carousel /> */}
+      <Carousel projects={projects} />
     </motion.section>
   );
 };
