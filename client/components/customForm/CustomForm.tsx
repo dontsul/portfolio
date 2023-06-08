@@ -5,6 +5,9 @@ import { motion } from 'framer-motion';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { Card, Input, Button, Typography, Textarea } from '@material-tailwind/react';
+import toast, { Toaster } from 'react-hot-toast';
+
+const notify = () => toast('Here is your toast.');
 
 const schema = yup
   .object({
@@ -28,14 +31,17 @@ export const CustomForm = () => {
   });
 
   const onSubmit = (data: FormData) => {
-    fetch(`${URL}/api/formdatas`, {
+    fetch(`${URL}api/formdatas`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
       },
       body: JSON.stringify(data),
     })
-      .then(() => reset())
+      .then(() => {
+        notify();
+        reset();
+      })
       .catch((e) => console.log(e));
   };
 
@@ -123,6 +129,7 @@ export const CustomForm = () => {
           </motion.div>
         </form>
       </Card>
+      <Toaster />
     </motion.div>
   );
 };
