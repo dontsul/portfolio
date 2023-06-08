@@ -7,7 +7,7 @@ import * as yup from 'yup';
 import { Card, Input, Button, Typography, Textarea } from '@material-tailwind/react';
 import toast, { Toaster } from 'react-hot-toast';
 
-const notify = () => toast('Here is your toast.');
+const notify = () => toast('Message was send.');
 
 const schema = yup
   .object({
