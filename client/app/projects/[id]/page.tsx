@@ -6,7 +6,8 @@ interface ProjectProps {
 }
 
 async function getProject(id: string) {
-  const response = await fetch(`http://localhost:3002/api/projects/${id}`);
+  const URL = process.env.NEXT_PUBLIC_URL;
+  const response = await fetch(`${URL}/api/projects/${id}`);
 
   if (!response.ok) {
     throw new Error('Failed to fetch data');
