@@ -29,6 +29,10 @@ app.get('/images/:imageName', (req, res) => {
   res.sendFile(imageName, { root: '/images' });
 });
 
+app.get('/', (req, res) => {
+  res.send('Hello');
+});
+
 async function start() {
   try {
     await mongoose.connect(
