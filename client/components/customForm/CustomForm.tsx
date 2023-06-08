@@ -7,8 +7,6 @@ import * as yup from 'yup';
 import { Card, Input, Button, Typography, Textarea } from '@material-tailwind/react';
 import toast, { Toaster } from 'react-hot-toast';
 
-const notify = () => toast('Message was send.');
-
 const schema = yup
   .object({
     name: yup.string().min(2, 'must be at least 2 characters long').required(),
@@ -39,7 +37,7 @@ export const CustomForm = () => {
       body: JSON.stringify(data),
     })
       .then(() => {
-        notify();
+        toast('Message was send.');
         reset();
       })
       .catch((e) => console.log(e));
