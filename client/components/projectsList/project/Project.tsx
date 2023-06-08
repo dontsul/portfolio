@@ -21,12 +21,14 @@ export interface ProjectProps {
 }
 
 export const Project: FC<ProjectProps> = ({ project }) => {
+  const URL = process.env.NEXT_PUBLIC_URL;
+
   return (
     <Link href={`/projects/${project._id}`}>
       <div className="relative h-full w-full z-10">
         <Image
           className="h-full w-full rounded-xl"
-          src={`http://localhost:3002/projects/${project.image}`}
+          src={`${URL}projects/${project.image}`}
           alt={project.title}
           width={2000}
           height={2000}

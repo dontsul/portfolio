@@ -3,9 +3,9 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: 'localhost',
-        port: '3002',
+        protocol: 'https',
+        hostname: 'portfolio-server-ashen-nine.vercel.app',
+        // port: '3002',
         // pathname: '/account123/**',
       },
     ],

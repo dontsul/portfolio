@@ -32,7 +32,7 @@ export const ProjectsSlide = () => {
           My Projects
         </Typography>
       </motion.div>
-      <Carousel />
+      {/* <Carousel /> */}
     </motion.section>
   );
 };

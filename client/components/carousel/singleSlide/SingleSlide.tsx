@@ -32,13 +32,13 @@ export const SingleSlide: FC<ProjectProps> = ({ project }) => {
   return (
     <Card className="w-full max-w-[26rem] bg-white dark:bg-blue-gray-800  h-full rounded-md">
       <CardHeader className="rounded-md" floated={false} color="blue-gray">
-        <Image
+        {/* <Image
           className="rounded-md"
           src={`http://localhost:3002/projects/${project.image}`}
           alt={project.title}
           width={1000}
           height={1000}
-        />
+        /> */}
         <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60" />
       </CardHeader>
       <CardBody className="p-0 px-5 py-2 bp-0 mb-0">

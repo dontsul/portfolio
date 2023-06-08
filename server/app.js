@@ -16,7 +16,7 @@ const DB_NAME = process.env.DB_NAME;
 
 // Middleware
 app.use(express.json());
-app.use(express.static('images'));
+// app.use(express.static('images'));
 app.use(cors());
 
 // Router
@@ -24,10 +24,10 @@ app.use('/api/projects', projectsRoute);
 app.use('/api/technologies', technologiesRoute);
 app.use('/api/formdatas', formDatasRoute);
 
-app.get('/images/:imageName', (req, res) => {
-  const { imageName } = req.params;
-  res.sendFile(imageName, { root: '/images' });
-});
+// app.get('/images/:imageName', (req, res) => {
+//   const { imageName } = req.params;
+//   res.sendFile(imageName, { root: '/images' });
+// });
 
 app.get('/', (req, res) => {
   res.send('Hello');

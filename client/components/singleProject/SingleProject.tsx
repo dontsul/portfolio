@@ -8,6 +8,8 @@ import { Round } from '../round/Round';
 import { motion } from 'framer-motion';
 
 export const SingleProject: FC<ProjectProps> = ({ project }) => {
+  const URL = process.env.NEXT_PUBLIC_URL;
+
   const blocksAnimation = {
     hidden: {
       x: 200,
@@ -63,7 +65,7 @@ export const SingleProject: FC<ProjectProps> = ({ project }) => {
         <motion.div variants={photoAnimation} className="col-span-3 lg:col-span-2 z-10">
           <Image
             className="rounded-md z-10"
-            src={`http://localhost:3002/projects/${project.image}`}
+            src={`${URL}projects/${project.image}`}
             alt={project.title}
             width={1000}
             height={800}
