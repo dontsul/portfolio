@@ -17,6 +17,7 @@ const schema = yup
 type FormData = yup.InferType<typeof schema>;
 
 export const CustomForm = () => {
+  const URL = process.env.NEXT_PUBLIC_URL;
   const {
     register,
     handleSubmit,
@@ -27,7 +28,7 @@ export const CustomForm = () => {
   });
 
   const onSubmit = (data: FormData) => {
-    fetch('http://localhost:3002/api/formdatas', {
+    fetch(`${URL}/api/formdatas`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
