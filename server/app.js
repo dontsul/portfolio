@@ -6,7 +6,7 @@ import technologiesRoute from './routes/Technologies.js';
 import formDatasRoute from './routes/FormDatas.js';
 import mongoose from 'mongoose';
 
-const app = express();
+export const app = express();
 dotenv.config();
 
 const PORT = process.env.PORT || 3001;
