@@ -127,7 +127,7 @@ export const CustomForm = () => {
           </motion.div>
         </form>
       </Card>
-      <Toaster />
+      <Toaster position="bottom-center" />
     </motion.div>
   );
 };
