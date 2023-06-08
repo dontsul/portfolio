@@ -65,7 +65,7 @@ export const SingleProject: FC<ProjectProps> = ({ project }) => {
         <motion.div variants={photoAnimation} className="col-span-3 lg:col-span-2 z-10">
           <Image
             className="rounded-md z-10"
-            src={`${URL}projects/${project.image}`}
+            src={`${URL}images/projects/${project.image}`}
             alt={project.title}
             width={1000}
             height={800}

@@ -1,7 +1,8 @@
 import { ProjectsList } from '@/components/projectsList/ProjectsList';
 
 async function getProjects() {
-  const response = await fetch('http://localhost:3002/api/projects');
+  const URL = process.env.NEXT_PUBLIC_URL;
+  const response = await fetch(`${URL}/api/projects`);
 
   if (!response.ok) {
     throw new Error('Failed to fetch data');

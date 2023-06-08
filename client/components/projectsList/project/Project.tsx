@@ -28,7 +28,7 @@ export const Project: FC<ProjectProps> = ({ project }) => {
       <div className="relative h-full w-full z-10">
         <Image
           className="h-full w-full rounded-xl"
-          src={`${URL}projects/${project.image}`}
+          src={`${URL}images/projects/${project.image}`}
           alt={project.title}
           width={2000}
           height={2000}
