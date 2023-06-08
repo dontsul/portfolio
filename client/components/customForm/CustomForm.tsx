@@ -127,7 +127,12 @@ export const CustomForm = () => {
           </motion.div>
         </form>
       </Card>
-      <Toaster position="bottom-center" />
+      <Toaster
+        toastOptions={{
+          className: 'z-50',
+        }}
+        position="bottom-center"
+      />
     </motion.div>
   );
 };
