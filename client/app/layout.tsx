@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main className="container">{children}</main>
         <Footer />
-        {/* <Particle /> */}
+        <Particle />
       </body>
     </html>
   );
