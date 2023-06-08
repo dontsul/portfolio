@@ -25,6 +25,7 @@ export const Skills: FC = () => {
 
   return (
     <motion.section
+      id="skills"
       initial="hidden"
       whileInView="visible"
       className="container py-16 border-t-blue-500 z-10"

@@ -11,6 +11,11 @@
     --background: #263238;
   }
 }
+/* @media (prefers-reducer-notion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+} */
 
 body {
   background: var(--background);

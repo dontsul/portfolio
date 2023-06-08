@@ -53,8 +53,7 @@ export const SingleSlide: FC<ProjectProps> = ({ project }) => {
         </div>
 
         <p className="font-normal opacity-75 text-xs line-clamp-2 mt-1 mb-2 text-blue-gray-800 dark:text-blue-gray-100">
-          With plenty of talk and listen time, voice-activated Siri access, and an available
-          wireless charging case.
+          {project.description}
         </p>
         <div className="group inline-flex flex-wrap items-center gap-3 m-0 py-0">
           <Tooltip content="Github">

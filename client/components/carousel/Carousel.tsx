@@ -22,7 +22,7 @@ async function getProjects() {
   return response.json();
 }
 
-export const Carousel = async () => {
+export const Carousel = async (): Promise<JSX.Element> => {
   const res = await getProjects();
   const projects = await res.projects;
 
@@ -69,12 +69,7 @@ export const Carousel = async () => {
               key={index}
               className="block w-[300px] h-full bg-white dark:bg-blue-gray-800 rounded-md"
             >
-              <SingleSlide
-                project={project}
-                // image={project.element}
-                // title={project.title}
-                // index={index}
-              />
+              <SingleSlide project={project} />
             </SwiperSlide>
           );
         })}

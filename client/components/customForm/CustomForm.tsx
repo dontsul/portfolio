@@ -112,7 +112,11 @@ export const CustomForm = () => {
             </motion.div>
           </div>
           <motion.div custom={1} variants={elemntAnimation}>
-            <Button type="submit" className="mt-6 dark:bg-blue-500" fullWidth>
+            <Button
+              type="submit"
+              className="mt-6 bg-gradient-to-tr from-blue-200 to-blue-500"
+              fullWidth
+            >
               Submit
             </Button>
           </motion.div>

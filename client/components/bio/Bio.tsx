@@ -1,11 +1,13 @@
 'use client';
 
 import { Button } from '@material-tailwind/react';
+import { ArrowLongRightIcon, CloudArrowUpIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 import { MIconBtnList } from '../iconBtnList/IconBtnList';
 import { Photo } from '../photo/Photo';
 import { useEffect } from 'react';
 import { useAnimate } from 'framer-motion';
+import Link from 'next/link';
 
 export const Bio = () => {
   const textAnimation = {
@@ -59,21 +61,32 @@ export const Bio = () => {
               variants={textAnimation}
               className="text-lg text-blue-gray-600 dark:text-blue-gray-300 "
             >
-              Front-end Developer
+              Fullstack Developer
             </motion.h3>
             <motion.p
               custom={3}
               variants={textAnimation}
               className="mt-4 text-blue-gray-800 text-sm dark:text-blue-gray-100 bg-blue-gray-50 dark:bg-blue-gray-900 rounded-lg"
             >
-              I am a Junior front-end developer with a desire to learn and develop in a team
-              environment. I completed the &ldquo;Front-end&ldquo; course at the DAN.IT Education. I
-              am a developer with solid theoretical base experience in creating responsive websites.
-              I actively practice Frontend and delve into the Backend.
+              I am a Fullstack developer and welcome you here. My commitment to excellence and
+              passion for building web applications allows me to offer unique and innovative
+              solutions. I am fully committed to creating quality code and following development
+              best practices.
             </motion.p>
+            <motion.div
+              custom={4}
+              variants={textAnimation}
+              className="mt-16 flex xs:flex-col xs:gap-4 md:flex-row items-center justify-start "
+            >
+              <Link href={`/projects`} className="mb-8">
+                <Button className="flex items-center gap-2 text-white font-semibold  bg-blue-500">
+                  See projects <ArrowLongRightIcon strokeWidth={2} className="h-5 w-5" />
+                </Button>
+              </Link>
+            </motion.div>
           </div>
 
-          <MIconBtnList custom={4} variants={textAnimation} />
+          <MIconBtnList custom={5} variants={textAnimation} />
         </div>
         <motion.div variants={photoAnimation}>
           <Photo outline={false} />

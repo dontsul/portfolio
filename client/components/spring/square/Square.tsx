@@ -44,7 +44,7 @@ export const Square: React.FC<SquareProps> = ({
       onDragStart={() => setActive({ row: rowIndex, col: colIndex })}
       className="w-[30px] h-[30px]  sm:w-[40px] sm:h-[40px] md:w-[60px] md:h-[60px] p-0 title:text-red z-50"
       style={{
-        backgroundImage: `url('/skillsPng/${image}')`,
+        backgroundImage: `url('/skills/${image}')`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center',

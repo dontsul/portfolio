@@ -14,7 +14,7 @@ export const IconBtnList = forwardRef<HTMLDivElement, {}>((_, ref) => {
           target="_blank"
           className="cursor-pointer"
         >
-          <IconBtn cn="text-blue-gray-900 dark:text-white" element={AiFillGithub} />
+          <IconBtn cn="text-blue-gray-900 dark:text-white" element={AiFillGithub} size={40} />
         </a>
       </Tooltip>
       <Tooltip content="Gitlab">
@@ -23,7 +23,7 @@ export const IconBtnList = forwardRef<HTMLDivElement, {}>((_, ref) => {
           target="_blank"
           className="cursor-pointer"
         >
-          <IconBtn cn="text-blue-gray-900 dark:text-white" element={AiOutlineGitlab} />
+          <IconBtn cn="text-blue-gray-900 dark:text-white" element={AiOutlineGitlab} size={40} />
         </a>
       </Tooltip>
       <Tooltip content="Linkedin">
@@ -32,7 +32,7 @@ export const IconBtnList = forwardRef<HTMLDivElement, {}>((_, ref) => {
           target="_blank"
           className="cursor-pointer"
         >
-          <IconBtn cn="text-blue-gray-900 dark:text-white" element={AiFillLinkedin} />
+          <IconBtn cn="text-blue-gray-900 dark:text-white" element={AiFillLinkedin} size={40} />
         </a>
       </Tooltip>
     </div>
