@@ -2,7 +2,6 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import projectsRoute from './routes/Projects.js';
-import technologiesRoute from './routes/Technologies.js';
 import formDatasRoute from './routes/FormDatas.js';
 import mongoose from 'mongoose';
 
@@ -21,7 +20,6 @@ app.use(express.static('images'));
 
 // Router
 app.use('/api/projects', projectsRoute);
-app.use('/api/technologies', technologiesRoute);
 app.use('/api/formdatas', formDatasRoute);
 
 app.get('/images/:imageName', (req, res) => {
